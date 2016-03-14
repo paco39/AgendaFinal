@@ -35,6 +35,9 @@ public class Agenda {
         return this.contactos.add(contacto);
     }
     public void imprimirBusqueda(List<Contacto> lista){
+        if(tamanoLista2(lista)==0){
+            System.out.println("No se han encontrado resultados");
+        }
         for(int i=0;i<tamanoLista2(lista);i++){
             imprimirContacto(lista.get(i));
         }

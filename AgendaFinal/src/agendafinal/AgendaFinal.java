@@ -55,13 +55,18 @@ public class AgendaFinal {
                 while(opcion.equals("si") || opcion.equals("SI") || opcion.equals("Si") || opcion.equals("sI")){
                     System.out.println("Ingresa el tipo de red social");
                     tipo=teclado.nextLine();
+                    teclado.next();
                     redsocial.setTipo(tipo);
                                                                             //Se lee la informacion
                     System.out.println("Ingresa el nombre de usuario");
                     nombreusuario=teclado.nextLine();
+                    teclado.next();
                     redsocial.setNombreUsuario(nombreusuario);
 
-                    contacto.registrarRedesSociales(redsocial);                           //Se guarda el objeto en la lista
+                    if(contacto.registrarRedesSociales(redsocial)==false){
+                        System.out.println("Ha habido un error, intenta de nuevo");
+                    }
+                    
                     int band=0;
                     while(band==0){
                     System.out.println("¿Deseas agregar otra cuenta?(Si/No)");
@@ -76,13 +81,15 @@ public class AgendaFinal {
                 while(opcion.equals("si") || opcion.equals("SI") || opcion.equals("Si") || opcion.equals("sI")){
                     System.out.println("Ingresa el tipo de telefono");
                     tipo=teclado.nextLine();
+                    teclado.next();
                     telefono.setTipo(tipo);
                                                                             //Se leen los datos
                     System.out.println("Ingresa el numero de telefono");
                     numero=teclado.nextLine();
-                    telefono.setNumero(numero);
-
-                    contacto.registrarTelefonos(telefono);                               //Se guarda el objeto en la lista
+                    teclado.next();
+                    if(contacto.registrarTelefonos(telefono)==false){                               //Se guarda el objeto en la lista
+                        System.out.println("Ha habido un error, intenta de nuevo");
+                    }
 
                     int band=0;
                     while(band==0){
@@ -99,8 +106,9 @@ public class AgendaFinal {
                     System.out.println("Ingresa el correo electronico");
                     correoElectronico=teclado.next();
                     
-                    contacto.registrarCorreosElectronicos(correoElectronico);                               //Se guarda el objeto en la lista
-
+                    if(contacto.registrarCorreosElectronicos(correoElectronico)==false){                               //Se guarda el objeto en la lista
+                        System.out.println("Ha habido un error, intenta de nuevo");
+                    }
                     opcion="si";
                     int band=0;
                     while(band==0){

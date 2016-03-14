@@ -34,13 +34,15 @@ public class Agenda {
     public boolean guardarContacto(Contacto contacto){
         return this.contactos.add(contacto);
     }
-    public void imprimirBusqueda(List<Contacto> lista){
+    public boolean imprimirBusqueda(List<Contacto> lista){
         if(tamanoLista2(lista)==0){
             System.out.println("No se han encontrado resultados");
+            return false;
         }
         for(int i=0;i<tamanoLista2(lista);i++){
             imprimirContacto(lista.get(i));
         }
+        return true;
     }
     public List<Contacto> buscarPorNombre(String nombreBuscar){
         return this.buscaContacto(nombreBuscar, TipoBusqueda.porNombre);
@@ -82,15 +84,18 @@ public class Agenda {
         System.out.println("Ocupacion: "+contacto.getOcupacion());
         contacto.mostrarTelefonos();
         contacto.mostrarRedesSociales();
+        contacto.mostrarCorreosElectronicos();
     }
-    public void mostrarContactos(){
+    public boolean mostrarContactos(){
         if(tamanoLista()==0){
             System.out.println("No hay contactos en la agenda");
+            return false;
         }else{
         for(int i=0;i<tamanoLista();i++){
             System.out.println("Contacto "+i+1);
             imprimirContacto(contactos.get(i));
         }
+        return true;
         }
     }
 }

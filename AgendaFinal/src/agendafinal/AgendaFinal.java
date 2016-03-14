@@ -1,8 +1,10 @@
-/* Autores: Francisco Miranda y Renato Vargas
-    Archivo: Agenda.java
-    Fecha: 16/02/2016
-    Descripción: Este programa permite al usuario tener un registro
-                 de sus contactos.
+/**
+* Este programa permite al usuario tener un registro de
+* sus contactos
+*
+* @author  Francisco Miranda y Renato Vargas
+* @version 2.0
+* @since 12/03/1016
 */
 package agendafinal;
 
@@ -14,7 +16,10 @@ import modelo.RedSocial;
 import modelo.Telefono;
 
 public class AgendaFinal {
-    
+    /**
+   * Este es el metodo principal donde se mandan a llamar las operaciones
+   * del programa.
+   */
     public static void main(String[] args) {
         boolean boleano=true;
         int x;

@@ -54,25 +54,25 @@ public class AgendaFinal {
                 String tipo="", nombreusuario="", opcion="si", numero="";
                 while(opcion.equals("si") || opcion.equals("SI") || opcion.equals("Si") || opcion.equals("sI")){
                     System.out.println("Ingresa el tipo de red social");
-                    tipo=teclado.nextLine();
-                    teclado.next();
+                    tipo=teclado.next();
+                    //teclado.next();
                     redsocial.setTipo(tipo);
                                                                             //Se lee la informacion
                     System.out.println("Ingresa el nombre de usuario");
-                    nombreusuario=teclado.nextLine();
-                    teclado.next();
+                    nombreusuario=teclado.next();
+                    //teclado.next();
                     redsocial.setNombreUsuario(nombreusuario);
 
                     if(contacto.registrarRedesSociales(redsocial)==false){
                         System.out.println("Ha habido un error, intenta de nuevo");
                     }
                     
-                    int band=0;
-                    while(band==0){
+                    int bandera=0;
+                    while(bandera==0){
                     System.out.println("¿Deseas agregar otra cuenta?(Si/No)");
-                    opcion=teclado.nextLine();
+                    opcion=teclado.next();
                     if(opcion.equals("si")||opcion.equals("no")||opcion.equals("NO")||opcion.equals("nO")||opcion.equals("No")){
-                        band=1;
+                        bandera=1;
                     }
                     }
                 }
@@ -80,23 +80,23 @@ public class AgendaFinal {
                 opcion="si";                                                     //Se crea una lista de Telefonos (Una lista por contacto)
                 while(opcion.equals("si") || opcion.equals("SI") || opcion.equals("Si") || opcion.equals("sI")){
                     System.out.println("Ingresa el tipo de telefono");
-                    tipo=teclado.nextLine();
-                    teclado.next();
+                    tipo=teclado.next();
+                    //teclado.next();
                     telefono.setTipo(tipo);
                                                                             //Se leen los datos
                     System.out.println("Ingresa el numero de telefono");
-                    numero=teclado.nextLine();
-                    teclado.next();
+                    numero=teclado.next();
+                    //teclado.next();
                     if(contacto.registrarTelefonos(telefono)==false){                               //Se guarda el objeto en la lista
                         System.out.println("Ha habido un error, intenta de nuevo");
                     }
 
-                    int band=0;
-                    while(band==0){
+                    int bandera=0;
+                    while(bandera==0){
                     System.out.println("¿Deseas agregar otro telefono?(Si/No)");
                     opcion=teclado.next();
                     if(opcion.equals("si")||opcion.equals("no")||opcion.equals("NO")||opcion.equals("nO")||opcion.equals("No")){
-                        band=1;
+                        bandera=1;
                     }
                     }
                 }
@@ -187,4 +187,3 @@ public class AgendaFinal {
         }       
     }
 }
-

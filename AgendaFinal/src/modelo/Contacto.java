@@ -85,7 +85,7 @@ public class Contacto {
         for(int i=0;i<tamanoLista(redesSociales);i++){
             System.out.println("-------------------------------------");
             System.out.println("Tipo: "+redSocial.getTipo());
-            System.out.println("Numero: "+redSocial.getNombreUsuario());
+            System.out.println("Cuenta: "+redSocial.getNombreUsuario());
         }
     }
     public void mostrarRedesSociales(){         //Funcion que recorre la lista de redes sociales
@@ -99,7 +99,7 @@ public class Contacto {
         }
         }
     }
-    public void mostrarCorreosElectronicos(String correoElectronico){
+    public void mostrarCorreosElectronicos(){
         if(tamanoLista(redesSociales)==0){
             System.out.println("No hay correos electronicos asociados a este contacto");
         }else{

@@ -57,7 +57,7 @@ public class AgendaFinal {
                     tipo=teclado.next();
                     //teclado.next();
                     redsocial.setTipo(tipo);
-                                                                            //Se lee la informacion
+                    //Se lee la informacion
                     System.out.println("Ingresa el nombre de usuario");
                     nombreusuario=teclado.next();
                     //teclado.next();
@@ -81,12 +81,11 @@ public class AgendaFinal {
                 while(opcion.equals("si") || opcion.equals("SI") || opcion.equals("Si") || opcion.equals("sI")){
                     System.out.println("Ingresa el tipo de telefono");
                     tipo=teclado.next();
-                    //teclado.next();
                     telefono.setTipo(tipo);
                                                                             //Se leen los datos
                     System.out.println("Ingresa el numero de telefono");
                     numero=teclado.next();
-                    //teclado.next();
+                    telefono.setNumero(numero);
                     if(contacto.registrarTelefonos(telefono)==false){                               //Se guarda el objeto en la lista
                         System.out.println("Ha habido un error, intenta de nuevo");
                     }
@@ -145,7 +144,8 @@ public class AgendaFinal {
                     System.out.println("1.- Buscar por nombre");
                     System.out.println("2.- buscar por ocupacion");
                     System.out.println("3.- Buscar por fecha de nacimiento");
-                    System.out.println("4.-Regresar");
+                    System.out.println("4.- Buscar por correo electronico");
+                    System.out.println("5.- Salir");
                     opcionBusqueda=teclado.nextInt();
                     switch(opcionBusqueda){
                     case 1:
@@ -187,3 +187,4 @@ public class AgendaFinal {
         }       
     }
 }
+

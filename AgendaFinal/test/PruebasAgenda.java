@@ -1,3 +1,4 @@
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -56,7 +57,32 @@ public class PruebasAgenda {
         assertEquals("",valorEsperado,contactoPrueba.registrarRedesSociales(redSocialPrueba));
     }
     
-    
+    @Test
+    public void pruebaMostrarContactoVacio(){
+        boolean valorEsperado=false;
+        assertEquals("",valorEsperado,agendaPrueba.mostrarContactos());
+    }
+    @Test
+    public void pruebaMostrarContacto(){
+        boolean valorEsperado=true;
+        contactoPrueba.setNombre("Renato");
+        agendaPrueba.guardarContacto(contactoPrueba);
+        assertEquals("",valorEsperado,agendaPrueba.mostrarContactos());
+    }
+    @Test
+    public void buscarContactoEncontrado(){
+        boolean valorEsperado=true;
+        contactoPrueba.setNombre("Renato");
+        agendaPrueba.guardarContacto(contactoPrueba);
+        assertEquals("",valorEsperado,agendaPrueba.imprimirBusqueda(agendaPrueba.buscarPorNombre("Renato")));
+    }
+    @Test
+    public void buscarContactoNoEncontrado(){
+        boolean valorEsperado=false;
+        contactoPrueba.setNombre("Paco");
+        agendaPrueba.guardarContacto(contactoPrueba);
+        assertEquals("",valorEsperado,agendaPrueba.imprimirBusqueda(agendaPrueba.buscarPorNombre("P4Kit0")));
+    }
     @BeforeClass
     public static void setUpClass() {
     }

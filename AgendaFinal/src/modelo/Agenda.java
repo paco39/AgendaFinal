@@ -31,9 +31,18 @@ public class Agenda {
                 .collect(Collectors.toList());
         
     }
+    /**
+    * Funcion que sirve para alamcenar a contactos en
+    * la lista
+    */
     public boolean guardarContacto(Contacto contacto){
         return this.contactos.add(contacto);
     }
+    /**
+     * funcion para comprobar el estado de una lista
+     * @param lista
+     * @return valor de busqueda exitosa o busqueda fallida
+     */
     public boolean imprimirBusqueda(List<Contacto> lista){
         if(tamanoLista2(lista)==0){
             System.out.println("No se han encontrado resultados");
@@ -70,8 +79,12 @@ public class Agenda {
         }
         return contactoEliminado;
     }
-    public int tamanoLista(){                                   //Función que regresa el numero de  
-        return contactos.size();                                //contactos guardados en la agenda
+    /**
+    * Función que regresa el numero de
+    * contactos guardados en la agenda
+    */
+    public int tamanoLista(){                                   
+        return contactos.size();                                
     }
     public int tamanoLista2(List<Contacto> lista){                                   //Función que regresa el numero de  
         return lista.size();                                //contactos guardados en la agenda
